@@ -4,33 +4,27 @@ class Movie
     public $title;
     public $director;
     public $genre;
-
     public function __construct($_title, $_director, $_genre)
     {
         $this->title = $_title;
         $this->director = $_director;
         $this->genre = $_genre;
     }
-
-    public function getAllInfo()
-    {
-        $info = [
-            'title' => $this->title,
-            'director' => $this->director,
-            'genre' => $this->genre,
-        ];
-        return $info;
-    }
+    /*  public function getAllInfo()
+  {
+    $info = [
+      'title' => $this->title,
+      'director' => $this->director,
+      'genre' => $this->genre,
+    ];
+    return $info;
+  } */
 }
-
 $shutter_island = new Movie("Shutter Island", "Martin Scorsese", "Thriller");
 $sinister = new Movie("Sinister", "Scott Derrickson", "Horror");
-
-$shutter_island_details = $shutter_island->getAllInfo();
-$sinister_details = $sinister->getAllInfo();
-
+/* $shutter_island_details = $shutter_island->getAllInfo();
+$sinister_details = $sinister->getAllInfo(); */
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -46,14 +40,14 @@ $sinister_details = $sinister->getAllInfo();
     <h1>Movies</h1>
     <ul>
         <?php
-        foreach ($shutter_island_details as $key => $detail) {
+        foreach ($shutter_island as $key => $detail) {
             echo "<li><h3>" . $key . ":</h3> " . $detail . "</li>";
         }
         ?>
     </ul>
     <ul>
         <?php
-        foreach ($sinister_details as $key => $detail) {
+        foreach ($sinister as $key => $detail) {
             echo "<li><h3>" . $key . ":</h3> " . $detail . "</li>";
         }
         ?>
